@@ -10,6 +10,14 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+      .bg-main {
+        background-color: #f8f8f8;
+      }
+      .bg-btn {
+        background-color: #e527b2;
+      }
+    </style>
   </head>
   <body>
     <header class="bg-[#F9F6E2]">
@@ -34,8 +42,8 @@
         </div>
       </div>
     </header>
-    <main class="lg:px-[240px] lg:py-[120px]">
-      <div>
+    <main class="p-32 bg-main">
+      <div class="m-4 flex flex-col lg:flex-row">
         <div class="flex flex-col lg:flex-col-reverse">
           <!-- div for cards area -->
           <div class="flex-1">
@@ -288,7 +296,45 @@
               </div>
             </div>
           </div>
-          <div class="max-w-342px"></div>
+        </div>
+
+        <!-- div for coupon area -->
+        <div class="max-w-342px ml-6">
+          <div>
+            <div class="mb-6 rounded-lg bg-white">
+              <h4 class="text-[#111] text-2xl font-medium mb-4 mr-0">
+                Have coupon?
+              </h4>
+              <input
+                class="border border-gray-300 text-xl px-4 py-3 rounded-lg focus:outline-none"
+                type="text"
+                placeholder="Coupon code"
+              />
+              <button
+                class="disabled bg-btn font-semibold text-xl text-white px-6 py-3 ml-0 rounded-tr-lg rounded-br-lg relative right-2"
+              >
+                Apply
+              </button>
+            </div>
+            <div class="rounded-lg p-6 bg-white">
+              <hr />
+              <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
+                Total price: <span></span>
+              </p>
+              <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
+                Discount: <span></span>
+              </p>
+              <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
+                Total: <span></span>
+              </p>
+              <hr />
+              <button
+                class="disabled bg-btn text-center px-[72px] py-4 text-white text-xl font-semibold rounded-lg relative -bottom-[52px]"
+              >
+                Make Purchase
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </main>
