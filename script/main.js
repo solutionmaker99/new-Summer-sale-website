@@ -103,9 +103,8 @@ purchesItems = (cardName, cardPrice) => {
     const productList = document.getElementById('product-list');
     const p = document.createElement('p');
     p.innerHTML = cardName;
-    // p.classList.add("text-[#111] text-2xl font-medium leading-[48px] mb-6")
+    
     productList.appendChild(p);
-
     const totalPriceString = document.getElementById('total-price');
 
 
@@ -115,23 +114,69 @@ purchesItems = (cardName, cardPrice) => {
 
     totalPriceString.innerText = value + " " + "TK";
 
-    const discount = document.getElementById('discount');
+    const payNow = document.getElementById('pay-now');
+    payNow.innerText = value + " " + "TK";
 
-    // const totalString = document.getElementById('total').innerText;
-    // const totalValue = parseInt(totalString);
 
-    // const couponId = document.getElementById('coupon-id');
-    // const disabled = true;
+    const makePurchase = document.getElementById('purchase');
+    if(value > 0){
+        makePurchase.disabled = false;
+    }
+    
 
-    // console.log("Total Value", totalValue)
-   
-   
+    const applyBtn = document.getElementById('apply');
+    const couponId = document.getElementById('coupon-id');
+    if(value >= 200){
+        applyBtn.disabled = false;
+        couponId.disabled = false;
+    }
+    
 
+    
+
+    
 }
 
 
 
 
+
+
+
+// const totalPriceValue = document.getElementById('total-price');
+// const totalNumber = parseInt(totalPriceValue.innerText)
+// console.log(totalNumber)
+
+
+
+
+
+
+const button = document.getElementById('apply');
+button.addEventListener('click', ()=>{
+const totalTakaString = document.getElementById('total-price');
+const totalTaka = totalTakaString.innerText;
+const totalValue = parseInt(totalTaka);
+
+const coupon = document.getElementById('coupon-id').value;
+const discountString = document.getElementById('discount');
+const finalTotal = document.getElementById('pay-now');
+
+
+if(coupon == 'SELL200'){
+    discountString.innerText = (totalValue * 20) / 100 + " " + "Tk"
+    const discountInt = parseInt(discountString.innerText);
+    finalTotal.innerText = (totalValue - discountInt) + " " + "TK"
+} 
+
+})
+
+
+
+
+function goHome(){
+    location.reload();
+}
 
 
 

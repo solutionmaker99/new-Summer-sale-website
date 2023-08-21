@@ -9,6 +9,14 @@
       rel="stylesheet"
       type="text/css"
     />
+    <!-- import work sans google font -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
       .bg-main {
@@ -17,9 +25,12 @@
       .bg-btn {
         background-color: #e527b2;
       }
+      .body-font {
+        font-family: "Work Sans", sans-serif;
+      }
     </style>
   </head>
-  <body>
+  <body class="body-font">
     <header class="bg-[#F9F6E2]">
       <div class="hero min-w-screen lg:px-[240px] lg:py-20">
         <div class="hero-content flex-col lg:flex-row-reverse">
@@ -42,6 +53,7 @@
         </div>
       </div>
     </header>
+    <!-- MAIN SECTION -->
     <main class="p-32 bg-main">
       <div class="m-4 flex flex-col lg:flex-row">
         <div class="flex flex-col lg:flex-col-reverse">
@@ -310,9 +322,12 @@
                 class="border border-gray-300 max-w-[195px] text-xl px-4 py-3 rounded-lg focus:outline-none"
                 type="text"
                 placeholder="Coupon code"
+                disabled
               />
               <button
-                class="disabled bg-btn font-semibold text-xl text-white px-6 py-3 ml-0 rounded-tr-lg rounded-br-lg relative right-3"
+                id="apply"
+                disabled
+                class="bg-btn font-semibold text-xl text-white px-6 py-3 ml-0 rounded-tr-lg rounded-br-lg relative right-3"
               >
                 Apply
               </button>
@@ -323,21 +338,55 @@
               <hr />
               <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
                 Total price:
-                <span id="total-price" class="text-gray-400 ml-1">00 TK</span>
+                <span id="total-price" class="text-gray-400 ml-1 total-value"
+                  >00 TK</span
+                >
               </p>
               <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
                 Discount:
                 <span id="discount" class="text-gray-400 ml-1">00 TK</span>
               </p>
               <p class="text-[#111] text-2xl font-medium leading-[48px] mb-6">
-                Total: <span id="total" class="text-gray-400 ml-1"> 00 TK</span>
+                Total:
+                <span id="pay-now" class="text-gray-400 ml-1"> 00 TK</span>
               </p>
               <hr />
               <button
-                class="disabled bg-btn text-center px-[72px] py-4 text-white text-xl font-semibold rounded-lg relative -bottom-[52px]"
+                id="purchase"
+                disabled
+                class="bg-btn text-center px-[72px] py-4 text-white text-xl font-semibold rounded-lg relative -bottom-[52px]"
+                onclick="my_modal_5.showModal()"
               >
                 Make Purchase
               </button>
+              <dialog
+                id="my_modal_5"
+                class="modal modal-bottom sm:modal-middle w-[600px] h-[600px] mx-auto my-auto"
+              >
+                <div
+                  method="dialog"
+                  class="modal-box flex justify-center items-center flex-col"
+                >
+                  <img
+                    class="w-40 h-40 mb-10"
+                    src="images/congo.png"
+                    alt="successful payment"
+                  />
+                  <h2 class="text-[#111] text-5xl font-bold mb-4">
+                    Congratulations
+                  </h2>
+                  <p class="py-4 text-gray-500">Your Purchase the product</p>
+                  <div class="modal-action">
+                    <button
+                      href="#"
+                      class="bg-btn text-center px-12 py-4 text-white text-xl font-semibold rounded-lg mb-20"
+                      onclick="goHome()"
+                    >
+                      Go Home
+                    </button>
+                  </div>
+                </div>
+              </dialog>
             </div>
           </div>
         </div>
