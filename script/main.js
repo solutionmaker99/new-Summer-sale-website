@@ -101,10 +101,15 @@ prod9.addEventListener('click', ()=>{
 purchesItems = (cardName, cardPrice) => {
     console.log(cardName + " " + cardPrice);
     const productList = document.getElementById('product-list');
-    const p = document.createElement('p');
-    p.innerHTML = cardName;
-    
+
+    const product = productList.childElementCount;
+
+
+    const p = document.createElement('p'); 
+    p.classList.add('text-[#111]', 'text-2xl', 'font-medium', 'leading-[48px]', 'mb-6')
+    p.innerHTML = `${product + 1}. ${cardName}`;
     productList.appendChild(p);
+
     const totalPriceString = document.getElementById('total-price');
 
 
@@ -136,21 +141,6 @@ purchesItems = (cardName, cardPrice) => {
 
     
 }
-
-
-
-
-
-
-
-// const totalPriceValue = document.getElementById('total-price');
-// const totalNumber = parseInt(totalPriceValue.innerText)
-// console.log(totalNumber)
-
-
-
-
-
 
 const button = document.getElementById('apply');
 button.addEventListener('click', ()=>{
