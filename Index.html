@@ -34,12 +34,17 @@
     <header class="bg-[#F9F6E2]">
       <div class="hero min-w-screen px-120px lg:px-[240px] lg:py-20">
         <div class="hero-content flex-col lg:flex-row-reverse">
-          <img src="images/Summer 1.png" class="w-[707px] h-[708px]" />
+          <img
+            src="images/Summer 1.png"
+            class="h-auto w-auto md:w-[707px] md:h-[708px]"
+          />
           <div class="text-center">
             <h3 class="text-[#111] text-[2rem] font-medium mb-12">
               ---SALE FEVER---
             </h3>
-            <h1 class="text-6xl font-bold mb-[67px] w-[703px]">
+            <h1
+              class="text-2xl md:text-6xl font-bold mb-[67px] w-[360px] md:w-[703px]"
+            >
               Purchase TK 200 or above & get
               <span class="text-[#e527b2]">20% off</span>
             </h1>
@@ -54,7 +59,7 @@
       </div>
     </header>
     <!-- MAIN SECTION -->
-    <main class="p-32 bg-main">
+    <main class="md:p-32 bg-main">
       <div class="m-4 flex flex-col lg:flex-row">
         <div class="flex flex-col lg:flex-col-reverse">
           <!-- div for cards area -->
@@ -311,9 +316,9 @@
         </div>
 
         <!-- div for coupon area -->
-        <div class="max-w-342px ml-6 mt-[108px]">
+        <div class="lg:max-w-342px ml-6 mt-[108px]">
           <div>
-            <div class="mb-6 rounded-lg bg-white p-6">
+            <div class="mb-6 rounded-lg bg-white p-6 pl-8">
               <h4 class="text-[#111] text-2xl font-medium mb-4 mr-0">
                 Have coupon?
               </h4>
@@ -327,7 +332,7 @@
               <button
                 id="apply"
                 disabled
-                class="bg-btn font-semibold text-xl text-white px-6 py-3 ml-0 rounded-tr-lg rounded-br-lg relative right-3"
+                class="bg-btn font-semibold text-xl text-white px-6 py-3 ml-0 rounded-tr-lg rounded-br-lg relative right-2"
               >
                 Apply
               </button>
@@ -354,32 +359,36 @@
               <button
                 id="purchase"
                 disabled
-                class="bg-btn text-center px-[72px] py-4 text-white text-xl font-semibold rounded-lg relative -bottom-[52px]"
+                class="bg-btn text-center px-[72px] py-4 text-white text-xl font-semibold rounded-lg relative -bottom-[52px] left-4 md:left-8 lg:left-3"
                 onclick="my_modal_5.showModal()"
               >
                 Make Purchase
               </button>
               <dialog
                 id="my_modal_5"
-                class="modal modal-bottom sm:modal-middle w-[600px] h-[600px] mx-auto my-auto"
+                class="modal modal-bottom sm:modal-middle h-[35rem] md:w-[600px] md:h-[600px] md:mx-auto lg:my-auto"
               >
                 <div
                   method="dialog"
                   class="modal-box flex justify-center items-center flex-col"
                 >
                   <img
-                    class="w-40 h-40 mb-10"
+                    class="w-20 h-20 mb-0 md:w-40 md:h-40 md:mb-10"
                     src="images/congo.png"
                     alt="successful payment"
                   />
-                  <h2 class="text-[#111] text-5xl font-bold mb-4">
+                  <h2
+                    class="text-[#111] text-[32px] md:text-5xl font-normal md:font-bold mb-4"
+                  >
                     Congratulations
                   </h2>
-                  <p class="py-4 text-gray-500">Your Purchase the product</p>
+                  <p class="pt-4 pb-0 text-gray-500">
+                    Your Purchase the product
+                  </p>
                   <div class="modal-action">
                     <button
                       href="#"
-                      class="bg-btn text-center px-12 py-4 text-white text-xl font-semibold rounded-lg mb-20"
+                      class="bg-btn text-center px-12 py-4 text-white text-xl font-semibold rounded-lg mb-0 md:mb-20"
                       onclick="goHome()"
                     >
                       Go Home

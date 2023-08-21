@@ -165,7 +165,8 @@ if(coupon == 'SELL200'){
 
 
 function goHome(){
-    location.reload();
+    // location.reload();
+    window.location.reload();
 }
 
 
